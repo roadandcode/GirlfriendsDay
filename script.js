@@ -576,4 +576,46 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, 600);
   });
+
+  /* ==========================================================================
+     10. Lightbox Photo Viewer Modal
+     ========================================================================== */
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+
+  function openLightbox(imgSrc, captionText) {
+    if (!lightboxModal) return;
+    lightboxImg.src = imgSrc;
+    lightboxCaption.textContent = captionText || '';
+    lightboxModal.classList.add('active');
+  }
+
+  function closeLightbox() {
+    if (!lightboxModal) return;
+    lightboxModal.classList.remove('active');
+  }
+
+  document.querySelectorAll('.polaroid-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const img = card.querySelector('img');
+      const caption = card.querySelector('.polaroid-caption');
+      if (img) {
+        openLightbox(img.src, caption ? caption.textContent.trim() : '');
+      }
+    });
+  });
+
+  if (lightboxCloseBtn) {
+    lightboxCloseBtn.addEventListener('click', closeLightbox);
+  }
+
+  if (lightboxModal) {
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) {
+        closeLightbox();
+      }
+    });
+  }
 });

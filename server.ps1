@@ -21,7 +21,8 @@ while ($listener.IsListening) {
         $localPath = $request.Url.LocalPath
         if ($localPath -eq "/") { $localPath = "/index.html" }
         
-        $filePath = Join-Path "c:\Users\admin\Downloads\Girlfriend Day" $localPath.TrimStart('/')
+        $baseDir = if ($PSScriptRoot) { $PSScriptRoot } else { "c:\Users\admin\Downloads\GF\GirlfriendsDay" }
+        $filePath = Join-Path $baseDir $localPath.TrimStart('/')
         
         if (Test-Path $filePath -PathType Leaf) {
             $ext = [System.IO.Path]::GetExtension($filePath).ToLower()
