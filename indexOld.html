@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Girlfriend's Day, My Love! 💖</title>
+  <meta name="description" content="A special, romantic surprise created just for you on Girlfriend's Day! 💖">
+
+  <!-- Open Graph / WhatsApp / Facebook Link Preview Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://girlfriends-day-khaki-two.vercel.app/">
+  <meta property="og:title" content="Happy Girlfriend's Day, My Love! 💖">
+  <meta property="og:description" content="A special, romantic surprise created just for you on Girlfriend's Day! 💖">
+  <meta property="og:image" content="assets/our_photo_2.jpg">
+
+  <!-- Twitter Link Preview Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Happy Girlfriend's Day, My Love! 💖">
+  <meta name="twitter:description" content="A special, romantic surprise created just for you on Girlfriend's Day! 💖">
+  <meta name="twitter:image" content="assets/our_photo_2.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,600&family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Floating Particles & Rose Petals Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Main Container -->
+  <div class="app-container">
+
+    <!-- Header / Hero Section -->
+    <header class="hero-section">
+      <div class="badge-pill">
+        <i class="fa-solid fa-sparkles"></i> Happy Girlfriend's Day • August 1st <i class="fa-solid fa-heart"></i>
+      </div>
+      <h1 class="hero-title">
+        For My Beautiful <span class="gradient-text" id="her-name-display">Sweetheart</span> 💖
+      </h1>
+    </header>
+
+    <!-- Interactive Audio Experience Section -->
+    <section class="section audio-section">
+      <div class="glass-card player-card">
+
+        <!-- Vinyl Record Container with Real Photo Album Art -->
+        <div class="vinyl-wrapper">
+          <div class="vinyl-groove" id="vinyl-record">
+            <div class="vinyl-center">
+              <img src="assets/our_photo_2.jpg" alt="Our Photo" class="album-art" id="player-album-art">
+              <div class="spindle-hole"></div>
+            </div>
+          </div>
+          <div class="tonearm" id="tonearm"></div>
+        </div>
+
+        <!-- Track Information -->
+        <div class="track-info">
+          <h2 class="track-title" id="track-title-display">My Queen 👑</h2>
+          <p class="track-artist" id="track-artist-display">Dedicated with all my love ❤️</p>
+        </div>
+
+        <!-- Linked Main Audio Element -->
+        <audio id="main-audio" src="assets/MyQueen.m4a" preload="auto"></audio>
+
+        <!-- Custom Player Controls -->
+        <div class="player-controls">
+          <div class="time-display">
+            <span id="current-time">0:00</span>
+            <span id="total-duration">0:00</span>
+          </div>
+
+          <div class="progress-bar-container" id="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+            <div class="progress-handle" id="progress-handle"></div>
+          </div>
+
+          <div class="buttons-row">
+            <button class="icon-btn secondary-btn" id="restart-btn" title="Restart Audio">
+              <i class="fa-solid fa-rotate-left"></i>
+            </button>
+
+            <button class="play-main-btn" id="play-pause-btn" title="Play / Pause">
+              <i class="fa-solid fa-play" id="play-icon"></i>
+            </button>
+
+            <button class="icon-btn secondary-btn" id="mute-btn" title="Mute / Unmute">
+              <i class="fa-solid fa-volume-high" id="volume-icon"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="completion-hint" id="completion-hint">
+          <i class="fa-solid fa-music"></i> <span id="hint-text">Play "My Queen" to unlock the sealed love letter & surprise wish!</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Envelope Section -->
+    <section class="section letter-section">
+      <div class="section-title-wrapper">
+        <h2 class="section-title">A Sealed Love Note 💌</h2>
+        <p class="section-subtitle" id="envelope-subtitle">Play the audio player once to unseal your handwritten letter</p>
+      </div>
+
+      <div class="envelope-container">
+        <div class="envelope locked" id="envelope">
+          <div class="envelope-flap"></div>
+          <div class="envelope-pocket"></div>
+          <div class="wax-seal" id="wax-seal">
+            <i class="fa-solid fa-lock" id="seal-icon"></i>
+          </div>
+
+          <!-- Inside Letter with Custom User Text -->
+          <div class="letter" id="letter">
+            <div class="letter-inner">
+              <div class="letter-header">
+                <span class="letter-date">August 1st, 2026</span>
+                <span class="letter-heading">My Dearest <span class="letter-her-name">Love</span>,</span>
+              </div>
+              <div class="letter-body" id="letter-body-display">
+                <p>You are the soul of my body, the light in my day, the peace in my heart and everything else that can be.</p>
+                <p>Thank you for being in my life and making it complete.</p>
+                <p style="font-weight: bold; color: #9e1b42; margin-top: 0.5rem;">Happy Girlfriend's Day 💖</p>
+              </div>
+              <div class="letter-signature" id="letter-signature-display">
+                <span class="handwritten" id="your-name-display">Forever Yours ❤️</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Polaroid Memory Gallery Section -->
+    <section class="section gallery-section">
+      <div class="section-title-wrapper">
+        <h2 class="section-title">Moments Wrapped in Love 📸</h2>
+      </div>
+
+      <div class="polaroid-grid">
+        <div class="polaroid-card card-tilt-left" data-index="1">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/our_photo_1.jpg" alt="Photo 1" class="polaroid-img" id="img-memory-1">
+          </div>
+          <div class="polaroid-caption" id="caption-memory-1">
+            <span>Our love is forever 💖</span>
+          </div>
+        </div>
+
+        <div class="polaroid-card card-center" data-index="2">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/our_photo_2.jpg" alt="Photo 2" class="polaroid-img" id="img-memory-2">
+          </div>
+          <div class="polaroid-caption" id="caption-memory-2">
+            <span>Forever it was ✨</span>
+          </div>
+        </div>
+
+        <div class="polaroid-card card-tilt-right" data-index="3">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/our_photo_3.jpg" alt="Photo 3" class="polaroid-img" id="img-memory-3">
+          </div>
+          <div class="polaroid-caption" id="caption-memory-3">
+            <span>Forever it will be 🌹</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Love Meter Widget -->
+    <section class="section meter-section">
+      <div class="glass-card meter-card">
+        <h2 class="meter-title"><i class="fa-solid fa-heart-pulse"></i> The Official Love Meter</h2>
+        <p class="meter-desc">Slide to check how much I love you today...</p>
+
+        <div class="meter-display">
+          <span class="meter-value" id="meter-value">100%</span>
+          <span class="meter-status" id="meter-status">Maximum Love Level Reached! 💕</span>
+        </div>
+
+        <div class="slider-wrapper">
+          <i class="fa-regular fa-heart slider-icon"></i>
+          <input type="range" id="love-slider" min="100" max="1000000" value="1000" class="love-range">
+          <i class="fa-solid fa-heart-circle-bolt slider-icon"></i>
+        </div>
+
+        <div class="meter-buttons">
+          <button class="glass-btn" id="boost-love-btn">
+            <i class="fa-solid fa-rocket"></i> Boost Love Level!
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Coupon / Reasons Card Section -->
+    <section class="section reasons-section">
+      <div class="section-title-wrapper">
+        <h2 class="section-title">Love Coupons & Special Promises 🎟️</h2>
+        <p class="section-subtitle">Click any coupon below to redeem a special promise</p>
+      </div>
+
+      <div class="coupons-grid">
+        <div class="coupon-card" data-coupon="Breakfast in Bed">
+          <div class="coupon-icon"><i class="fa-solid fa-mug-hot"></i></div>
+          <h3>Breakfast in Bed</h3>
+          <p>Redeemable whenever you feel like being pampered with your favorite treat.</p>
+          <button class="redeem-btn">Redeem Coupon 💖</button>
+        </div>
+
+        <div class="coupon-card" data-coupon="Movie Night Choice">
+          <div class="coupon-icon"><i class="fa-solid fa-film"></i></div>
+          <h3>Movie Night Choice</h3>
+          <p>You pick the movie, I get the snacks and endless cuddles guaranteed.</p>
+          <button class="redeem-btn">Redeem Coupon 🎬</button>
+        </div>
+
+        <div class="coupon-card" data-coupon="Unlimited Warm Hugs">
+          <div class="coupon-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+          <h3>Unlimited Warm Hugs</h3>
+          <p>Valid 24/7/365. No expiration date, infinite renewals.</p>
+          <button class="redeem-btn">Redeem Coupon 🤗</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toast Notification Popup -->
+    <div id="toast-notification" class="toast-notification"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Made with ❤️ for Girlfriend's Day 2026</p>
+    </footer>
+
+  </div>
+
+  <!-- Surprise Wish Modal (Triggered on audio completion) -->
+  <div class="modal-overlay" id="wish-modal">
+    <div class="glass-modal-content">
+      <button class="modal-close" id="modal-close-btn">&times;</button>
+      <div class="modal-badge"><i class="fa-solid fa-crown"></i> Dedicated Wish</div>
+      <h2 class="modal-title">Happy Girlfriend's Day! 🎉💖</h2>
+      
+      <div class="modal-heart-animation">
+        <div class="beating-heart">❤️</div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="glow-btn" id="modal-replay-btn">
+          <i class="fa-solid fa-play"></i> Replay Song
+        </button>
+        <button class="outline-btn" id="modal-letter-btn">
+          <i class="fa-solid fa-envelope-open-text"></i> Read Love Letter
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Photo Lightbox Modal -->
+  <div class="modal-overlay" id="lightbox-modal">
+    <div class="lightbox-content">
+      <button class="modal-close" id="lightbox-close-btn">&times;</button>
+      <img src="" alt="Full Preview" id="lightbox-img" class="lightbox-img">
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Canvas Confetti Overlay -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
